@@ -10,6 +10,12 @@ class Vendor
   def check_stock(item_obj)
     if !@inventory[item_obj]
       0
+    else
+      @inventory[item_obj]
     end
+  end
+
+  def stock(item_obj, amount)
+    @inventory[item_obj] = amount
   end
 end
