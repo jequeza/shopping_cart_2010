@@ -22,4 +22,21 @@ class Market
       vendor.inventory.include?(item_obj)
     end
   end
+
+  def overstocked_items
+    @vendors.each do |vendor|
+      require "pry"; binding.pry
+    end
+  end
+
+  def find_all_market_items
+    all_items = {}
+    @vendors.each do |vendor|
+      vendor.inventory.each do |item, amount|
+        all_items[item] += amount if !all_items[item]
+      end
+    end
+    require "pry"; binding.pry
+    all_items
+  end
 end
